@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+    font-size: 100%;
+    font-family: "Poppins", sans-serif;
+    color: #39435b;
+    text-align: center;
+    background-image: linear-gradient(#FFF, rgb(219, 239, 252));
+}
+
+.primary-heading{
+    font-size: 2.5rem;
+    padding-top: 2rem;
+}
+
+.secondary-heading{
+    font-size: 1.2rem;
+    margin-top: .5rem;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-inline: auto;
+    gap: clamp(.5em, 3em, 4em);
+    padding: 3rem;
+}
+
+@media (min-width: 62em){
+    .container{
+        flex-direction: row;
+    }
+    body{
+        height: 100vh;
+    }
+
+}
+
+.card{
+    position: relative;
+    flex-direction: column;
+    border-radius: 20px;
+    gap: 2em;
+    width: 300px;
+    height: 350px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 15px rgba(101, 101, 101, 0.551);
+    transition: 300ms ease;
+}
+
+.img1, .img2, .img3{
+    position: absolute;
+    zoom: 50%;
+}
+
+.text{
+    position: absolute;
+    text-align: center;
+    bottom: -160px;
+    color: #FFF;
+    backdrop-filter: blur(15px);
+    padding: 0.5rem;
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 -10px 10px #28282829;
+    transition: 300ms ease;
+}
+
+.text h2, .text p{
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: 400ms ease;
+    transition-delay: 300ms;
+}
+
+.social-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 400ms ease;
+    transition-delay: 300ms;
+    padding-top: .5rem;
+}
+
+.social-list a{
+    color: #FFF;
+    opacity: 0.8;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 5px 25px 0 #666;
+}
+
+.card:hover .text{
+    bottom: 0;
+
+}
+.card:hover .text h2, .card:hover .text p {
+    opacity: 1;
+    transform: translate(0px);
+
+}
+.card:hover .text .social-list {
+    opacity: 1;
+    transform: translateY(0px);
+
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(../imgs/layered-waves.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    z-index: -10;
+    opacity: .8;
+
+
+
+}
+
